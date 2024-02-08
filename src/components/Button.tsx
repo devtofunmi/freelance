@@ -1,4 +1,5 @@
 
+import Link from 'next/link';
 import React from 'react';
 
 interface ButtonProps {
@@ -9,9 +10,17 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ onClick, text, disabled }) => {
   return (
-    <button className={`bg-green-500 text-lg text-white p-2 mt-5 rounded-full px-5 py-2 ${disabled ? 'bg-gray-500 cursor-not-allowed' : ''}`} onClick={onClick}>
-      {text}
-    </button>
+      <Link href={disabled ? '/' : text.toLowerCase() === 'apply as a freelancer' ? '/freelancerpage' : '/clientpage'}>
+        <button
+          className={`bg-green-500  text-lg text-white p-2 mt-5 rounded-full px-5 py-2 ${
+            disabled ? 'cursor-not-allowed bg-gray-600' : 'hover:bg-green-600'
+          }`}
+          onClick={onClick}
+          disabled={disabled}
+        >
+          {text}
+        </button>
+    </Link>
   );
 };
 
