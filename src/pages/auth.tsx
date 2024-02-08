@@ -34,23 +34,23 @@ const Auth: React.FC = () => {
   const isCreateAccountDisabled = !(isClient || isFreelancer);
 
   return (
-    <div>
+    <div className="p-5 md:p-0">
       <Topbar />
-    <div className="flex flex-col justify-center items-center mt-40">
-      <h1 className="text-3xl font-semibold ">Join as a client or freelancer</h1>
-        <div className="flex gap-10 mt-5">
-        <div className="w-[300px] h-[200px] p-5 border-[2px] border-white rounded-md transition duration-300 ease-in-out hover:border-green-500 cursor-pointer"  onClick={handleClientCheckboxChange}>
+    <div className="flex flex-col justify-center items-center md:mt-40 mt-16">
+      <h1 className="md:w-full w-[300px] text-center text-3xl font-semibold ">Join as a client or freelancer</h1>
+        <div className="flex flex-col md:flex-row gap-10 mt-5">
+        <div className="w-full md:w-[300px] h-[150px] md:h-[200px] p-5 border-[2px] border-white rounded-md transition duration-300 ease-in-out hover:border-green-500 cursor-pointer"  onClick={handleClientCheckboxChange}>
           <div className="flex justify-end">
             <input  className="cursor-pointer appearance-none rounded-full border-2 border-white checked:bg-green-500 checked:border-transparent focus:outline-none h-6 w-6" type="checkbox" checked={isClient}
               onChange={handleClientCheckboxChange}
               onClick={uncheckCheckbox} />
           </div>
             
-        <p className="text-2xl mt-6">I&apos;m  a client,hiring for a project</p>
+        <p className="text-2xl mt-4 md:mt-6">I&apos;m  a client,hiring for a project</p>
       
       </div>
 
-      <div className="w-[300px] h-[200px] p-5 border-[2px] border-white rounded-md transition duration-300 ease-in-out hover:border-green-500 cursor-pointer" onClick={handleFreelancerCheckboxChange}>
+      <div className="w-full md:w-[300px]  h-[150px] md:h-[200px] p-5 border-[2px] border-white rounded-md transition duration-300 ease-in-out hover:border-green-500 cursor-pointer" onClick={handleFreelancerCheckboxChange}>
         <div className="flex justify-end">
               <input
               className="cursor-pointer appearance-none rounded-full border-2 border-white checked:bg-green-500 checked:border-transparent focus:outline-none h-6 w-6"
@@ -60,7 +60,7 @@ const Auth: React.FC = () => {
               onClick={uncheckCheckbox}
             />
           </div>
-        <p  className="text-2xl mt-6">I&apos;m  a freelancer, looking for work</p>
+        <p  className="text-2xl mt-4 md:mt-6">I&apos;m  a freelancer, looking for work</p>
        
       </div>
         </div>
