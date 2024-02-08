@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
     extend: {
        colors: {
-        background: '#121521', // Add your custom background color
+        background: '#121521',
+        textColor: '#ffffff'
       },
     
     },
