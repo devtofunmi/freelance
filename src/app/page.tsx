@@ -1,4 +1,4 @@
-import Authpage from "@/authentication/Authpage";
+import Authpage from "@/pages/auth";
 
 
 export default function Home() {
