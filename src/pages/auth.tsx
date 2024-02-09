@@ -1,5 +1,5 @@
 "use client";
-import Button from "@/components/Button";
+import Button from "@/components/AuthButton";
 import "../app/globals.css";
 
 import React, { useState } from 'react';
@@ -38,7 +38,7 @@ const Auth: React.FC = () => {
       <Topbar />
     <div className="flex flex-col justify-center items-center md:mt-40 mt-16">
       <h1 className="md:w-full w-[300px] text-center text-3xl font-semibold ">Join as a client or freelancer</h1>
-        <div className="flex flex-col md:flex-row gap-10 mt-5">
+        <div className="flex flex-col md:flex-row gap-10 mt-8 md:mt-5">
         <div className="w-full md:w-[300px] h-[150px] md:h-[200px] p-5 border-[2px] border-white rounded-md transition duration-300 ease-in-out hover:border-green-500 cursor-pointer"  onClick={handleClientCheckboxChange}>
           <div className="flex justify-end">
             <input  className="cursor-pointer appearance-none rounded-full border-2 border-white checked:bg-green-500 checked:border-transparent focus:outline-none h-6 w-6" type="checkbox" checked={isClient}
@@ -70,7 +70,7 @@ const Auth: React.FC = () => {
        <div className="flex gap-2 mt-5">
        <p>Already have an account?</p>
        <Link href="/login">
-       <p className="underline">Login</p></Link>
+       <p className="underline hover:text-green-[500]">Login</p></Link>
        </div>
     </div>
     </div>
