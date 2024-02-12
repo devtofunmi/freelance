@@ -73,6 +73,7 @@ const Auth: React.FC = () => {
        <p className="underline hover:text-green-[500]">Login</p></Link>
        </div>
     </div>
+    
     </div>
   );
 };
