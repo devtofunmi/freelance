@@ -26,20 +26,28 @@ export default function SignUp() {
         <form>
           <div className="flex gap-5 w-full mt-10">
             <div className="w-full">
-                <h1 className="text-xl">First name</h1>
+                <h1 className="text-xl" onChange={(e) => {
+                  setFirstName(e.target.name)
+                }}>First name</h1>
                 <input className="w-full rounded-lg py-2 px-1 mt-2 bg-transparent border-[1px] border-whute" type="text" />
             </div>
              <div className="w-full">
-                <h1 className="text-xl">Last name</h1>
+                <h1 className="text-xl" onChange={(e) => {
+                  setLastName(e.target.name)
+                }}>Last name</h1>
                 <input className="w-full rounded-lg py-2 px-1 mt-2 bg-transparent border-[1px] border-whute" type="name" />
             </div>
         </div>
         <div className="w-full mt-5">
-            <h1 className="text-xl">Email</h1>
+            <h1 className="text-xl" onChange={(e) => {
+                  setEmail(e.target.name)
+                }}>Email</h1>
             <input className="w-full rounded-lg py-2 px-1 mt-2 bg-transparent border-[1px] border-whute" type="email" />
         </div>
          <div className="w-full mt-5">
-            <h1 className="text-xl">Password</h1>
+            <h1 className="text-xl"  onChange={(e) => {
+                  setPassword(e.target.name)
+                }}>Password</h1>
             <input className="w-full rounded-lg py-2 px-1 mt-2 bg-transparent border-[1px] border-whute" type="password" />
         </div>
          <Button  text={"Create my account"} />
