@@ -15,7 +15,7 @@ export default function SignUp() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!firstName || !lastName || !email || !password || !errorMessage) {
+    if (!firstName || !lastName || !email || !password) {
       setErrorMessage("All fields are required");
       return;
     }
