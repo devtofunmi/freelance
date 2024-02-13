@@ -11,6 +11,7 @@ export default function SignUp() {
      <Topbar />
         <div className="flex  items-center justify-center">
      <div className="flex flex-col w-full px-5 md:px-0 md:w-[40%] justify-center items-center mt-20">
+      <div className="bg-red text-white py-1 px-3 rounded-md">error message</div>
         <h1 className="text-3xl text-center font-semibold">Sign up</h1>
         <form>
           <div className="flex gap-5 w-full mt-10">
