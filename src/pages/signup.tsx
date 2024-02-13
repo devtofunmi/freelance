@@ -3,15 +3,25 @@ import "../app/globals.css";
 import Topbar from "@/components/Topbar";
 import Button from "@/components/Button";
 import Link from "next/link";
+import { useState } from "react";
 
 
 export default function SignUp() {
+  const [firstName, setFirstName] =useState<string>('')
+  const [lastName, setLastName] =useState<string>('')
+  const [password, setPassword] =useState<string>('')
+  const [email, setEmail] =useState<string>('')
+  const [errorMessage, setErrorMessage] =useState<string>('errormessage')
   return (
     <div>
      <Topbar />
         <div className="flex  items-center justify-center">
      <div className="flex flex-col w-full px-5 md:px-0 md:w-[40%] justify-center items-center mt-20">
-      <div className="bg-red text-white py-1 px-3 rounded-md">error message</div>
+      {
+        errorMessage && (
+      <div className="bg-red text-white py-1 px-3 rounded-md">{errorMessage}</div>
+        )
+      }
         <h1 className="text-3xl text-center font-semibold">Sign up</h1>
         <form>
           <div className="flex gap-5 w-full mt-10">
