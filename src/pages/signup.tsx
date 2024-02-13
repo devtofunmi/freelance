@@ -12,6 +12,15 @@ export default function SignUp() {
   const [password, setPassword] =useState<string>('')
   const [email, setEmail] =useState<string>('')
   const [errorMessage, setErrorMessage] =useState<string>('errormessage')
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if(!firstName || ! lastName || email || password){
+      setErrorMessage("All fields are required")
+      return;
+    }
+  }
   return (
     <div>
      <Topbar />
@@ -23,30 +32,30 @@ export default function SignUp() {
         )
       }
         <h1 className="text-3xl text-center font-semibold">Sign up</h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="flex gap-5 w-full mt-10">
             <div className="w-full">
                 <h1 className="text-xl" onChange={(e) => {
-                  setFirstName(e.target.name)
+                  setFirstName(e.target.value)
                 }}>First name</h1>
                 <input className="w-full rounded-lg py-2 px-1 mt-2 bg-transparent border-[1px] border-whute" type="text" />
             </div>
              <div className="w-full">
                 <h1 className="text-xl" onChange={(e) => {
-                  setLastName(e.target.name)
+                  setLastName(e.target.value)
                 }}>Last name</h1>
                 <input className="w-full rounded-lg py-2 px-1 mt-2 bg-transparent border-[1px] border-whute" type="name" />
             </div>
         </div>
         <div className="w-full mt-5">
             <h1 className="text-xl" onChange={(e) => {
-                  setEmail(e.target.name)
+                  setEmail(e.target.value)
                 }}>Email</h1>
             <input className="w-full rounded-lg py-2 px-1 mt-2 bg-transparent border-[1px] border-whute" type="email" />
         </div>
          <div className="w-full mt-5">
             <h1 className="text-xl"  onChange={(e) => {
-                  setPassword(e.target.name)
+                  setPassword(e.target.value)
                 }}>Password</h1>
             <input className="w-full rounded-lg py-2 px-1 mt-2 bg-transparent border-[1px] border-whute" type="password" />
         </div>
