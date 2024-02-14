@@ -35,8 +35,9 @@ export default function SignUp() {
       });
 
       if (res.ok) {
-        const form = e.currentTarget;
-        form.reset();
+        // const form = e.currentTarget;
+        // form.reset();
+        console.log("success");
       } else {
         console.log("user registration failed.");
       }
