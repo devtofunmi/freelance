@@ -12,13 +12,20 @@ export default function SignUp() {
   const [password, setPassword] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
 
+   const isValidEmail = (value: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(value);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!firstName || !lastName || !email || !password) {
       setErrorMessage("All fields are required");
       return;
-    }
+    }else if (!isValidEmail(email)) {
+        setErrorMessage("Please enter a valid email address");
+      }
 
     try {
       const res = await fetch("api/signup", {
